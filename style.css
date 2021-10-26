@@ -1,0 +1,26 @@
+body {
+    background-image: url('/cloud.png');
+    background-attachment: fixed;
+} /* make the children inhereit this background*/
+
+.container{
+    background: inherit;
+}
+
+.container:before {
+    background: inherit;
+}
+
+/*psude element responsible for the blurring*/
+.container:before {
+    content: '';
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;   
+
+    box-shadow: inset 0 0 2000px rgb(255,255,255,.5); /*add color*/
+
+    filter: blur(10px);
+}
